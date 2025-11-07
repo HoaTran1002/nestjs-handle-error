@@ -1,8 +1,10 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Post } from '@nestjs/common';
+import { CreateStoDto } from './dto/create.sto';
 
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return 'Hello World!';
+  @Post()
+  postHello(createStoDto: CreateStoDto) {
+    return createStoDto;
   }
 }
